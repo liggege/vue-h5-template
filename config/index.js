@@ -9,7 +9,7 @@ module.exports = {
   },
   development: {
     baseURL: '/dev-api',
-    mockURL: 'https://api.xwhx.top'
+    mockURL: 'http://81.68.107.186:7300/mock/6088f9ce905d440016a71671'
   },
   production: {
     baseURL: 'https://api.xwhx.top',

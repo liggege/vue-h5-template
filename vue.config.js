@@ -38,7 +38,7 @@ module.exports = {
   },
   configureWebpack: {
     devtool: 'source-map',
-    name: 'vue-h5-template',
+    name: 'xgyqzt-page',
     resolve: {
       alias: {
         '@': resolve('src')

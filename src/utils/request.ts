@@ -1,10 +1,10 @@
 import { AxiosRequestConfig } from 'axios'
 import { Toast, Dialog } from 'vant'
-import store from '@/store'
+import { ResponseCode } from './response_code'
 import service from './axios'
 
 interface BaseResponse<T> {
-  code: number
+  code: string
   status: boolean
   data: T
   message?: string
@@ -17,25 +17,19 @@ const request = <T>(config: AxiosRequestConfig): Promise<BaseResponse<T>> => {
         resolve(res.data)
       },
       err => {
+        const errCode = err?.code
         switch (err?.code) {
-          case 401:
-            // token失效
-            Dialog.alert({
-              title: '提示',
-              message: '您还未登录或登录已过期，请重新登录'
-            }).then(() => {
-              store.dispatch('user/resetToken').then(() => {
-                location.reload()
-              })
-            })
-            break
-          default:
+          
+          case ResponseCode.FAIL:
             Toast(err.message)
+            break;
+          default:
+            Toast('网络异常，请稍候重试......')
             break
         }
         reject(err)
       }
-    )
+    ).catch
   })
 }
 

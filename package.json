@@ -1,7 +1,7 @@
 {
-  "name": "vue-h5-template",
-  "version": "3.0.0",
-  "author": "Ewall熊猫",
+  "name": "xgyqzt-page",
+  "version": "1.0.0",
+  "author": "",
   "scripts": {
     "build": "cross-env NODE_ENV=production vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
@@ -14,14 +14,20 @@
     "@better-scroll/core": "^2.1.1",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "fastclick": "^1.0.6",
     "js-cookie": "^2.2.1",
+    "moment": "^2.29.1",
     "uuid": "^8.3.2",
     "vant": "^3.0.3",
+    "vconsole": "^3.4.1",
     "vue": "^3.0.0",
+    "vue-navigation": "^1.1.4",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0-0",
+    "vuex-persistedstate": "^4.0.0-beta.3"
   },
   "devDependencies": {
+    "@types/fastclick": "^1.0.29",
     "@types/jest": "^24.0.19",
     "@types/js-cookie": "^2.2.6",
     "@types/uuid": "^8.3.0",
@@ -60,11 +66,11 @@
     "vant",
     "vue3.0",
     "typescript",
-    "vue-h5-template"
+    "xgyqzt-page"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ewall1106/mall"
+    "url": ""
   }
 }

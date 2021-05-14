@@ -15,7 +15,11 @@ import {
   Cell,
   CellGroup,
   Grid,
-  GridItem
+  GridItem,
+  Checkbox,
+  CheckboxGroup,
+  RadioGroup,
+  Radio
 } from 'vant'
 
 // https://vant-contrib.gitee.io/vant/v3/#/zh-CN
@@ -35,7 +39,11 @@ const plugins = [
   Cell,
   CellGroup,
   Grid,
-  GridItem
+  GridItem,
+  Checkbox,
+  CheckboxGroup,
+  RadioGroup,
+  Radio
 ]
 
 export default {

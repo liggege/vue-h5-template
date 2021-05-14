@@ -2,7 +2,8 @@
 @import './normalize.scss';
 @import './variables.scss';
 
-// hotfix：https://github.com/ftlabs/fastclick/issues/510
+// hotfix：https://github.com/ftlabs/fastclick/issues/510 #f0f3f5
 html {
   touch-action: manipulation;
+  background-color: #fff;
 }

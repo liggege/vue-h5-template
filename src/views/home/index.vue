@@ -1,72 +1,71 @@
 <template>
-  <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-    <van-list
-      v-model:loading="loading"
-      :finished="finished"
-      finished-text="没有更多了"
-      :immediate-check="false"
-      @load="onLoad"
-    >
-      <div class="home">
-        <Banner :banner="banner" />
-        <Category :cateList="cateList" />
-        <div class="goods-list">
-          <Goods
-            v-for="item in goodsList"
-            :key="item.productId"
-            :productId="item.productId"
-            :desc="item.desc"
-            :img="item.img"
-            :oldPrice="item.oldPrice"
-            :price="item.price"
-            :title="item.title"
-          />
-        </div>
-      </div>
-    </van-list>
-  </van-pull-refresh>
+  <div class="home">
+    <Banner :banner="bannerImg"></Banner>
+    <Menu :menuList="menuList"></Menu>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useBasicInfo } from './hooks/useBasicInfo'
-import { useListEffect } from './hooks/useListEffect'
-import Category from './components/Category.vue'
 import Banner from './components/Banner.vue'
-import Goods from './components/Goods.vue'
+import Menu from './components/Menu.vue'
+import { MenuSutrct } from './types/menuStruct-types'
 
 export default defineComponent({
   name: 'Home',
   components: {
-    Category,
     Banner,
-    Goods
+    Menu
   },
   setup() {
-    const { banner, requestBanner, cateList, requestCategory } = useBasicInfo()
-    const {
-      loading,
-      finished,
-      refreshing,
-      goodsList,
-      requestGoodsList,
-      onLoad,
-      onRefresh
-    } = useListEffect()
-
-    requestBanner()
-    requestCategory()
-    requestGoodsList()
-
+    const bannerImg = [{ img: require('../../assets/index/bannrt.png') }]
+    const menuList = [
+      {
+        icon: require('../../assets/index/qa03.png'),
+        title: '最新资讯',
+        url: 'NewsList'
+      },
+      {
+        icon: require('../../assets/index/qa02.png'),
+        title: '居家监测管理',
+        url: 'MonitorUser'
+      },
+      {
+        icon: require('../../assets/index/qa01.png'),
+        title: '个人主动申报',
+        url: 'PersonalReport'
+      },
+      {
+        icon: require('../../assets/index/qa07.png'),
+        title: '宣恩县发热门诊通道',
+        url: 'FeverClinic'
+      },
+      {
+        icon: require('../../assets/index/qa08.png'),
+        title: '宣恩县新冠肺炎定点收治医院',
+        url: 'TreatmentHospital'
+      },
+      {
+        icon: require('../../assets/index/qa09.png'),
+        title: '宣恩县疫苗（预约）接种点',
+        url: 'VaccinePoint'
+      },
+      {
+        icon: require('../../assets/index/qa04.png'),
+        title: '我要电话12320咨询',
+        url: 'tel://12320',
+        link: true
+      },
+      {
+        icon: require('../../assets/index/qa05.png'),
+        title: '我要投诉举报',
+        url: 'tel://12320',
+        link: true
+      }
+    ]
     return {
-      banner,
-      cateList,
-      goodsList,
-      loading,
-      finished,
-      refreshing,
-      onLoad,
-      onRefresh
+      bannerImg,
+      menuList
     }
   }
 })
@@ -75,12 +74,5 @@ export default defineComponent({
 <style lang="scss" scoped>
 .home {
   background: #f5f5f5;
-  min-height: 100vh;
-  .goods-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background: #fff;
-  }
 }
 </style>
