@@ -1,6 +1,6 @@
 export * from './news'
 export * from './monitor-man'
 export * from './person-report'
-export * from './vacc-point'
+export * from './vacc-location'
 export * from './treatment-hospital'
 export * from './fever-clinic'

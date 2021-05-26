@@ -135,6 +135,16 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
     }
   },
+  {
+    path: '/risk',
+    name: "RiskAssessment",
+    component: () => import('../views/assessment/risk/index.vue'),
+    meta: {
+      title: '慢病风险评估',
+      showBack: false,
+      keepAlive: true
+    }
+  },
   // 404
   {
     path: '/:pathMatch(.*)*',

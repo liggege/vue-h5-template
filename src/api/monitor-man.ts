@@ -5,7 +5,7 @@ export type MonitorUserInfoRequest = {
     time: string; //时间
     mbtp?: string; //早体温
     nbtp?: string; //晚体温
-    syms?: Array<string> //症状
+    symList?: Array<string> //症状
     
 } & MonitorManUserBaseInfo
 

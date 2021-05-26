@@ -41,9 +41,9 @@ export const userSymEffect = () =>{
           });
           const userSymData: MonitorUserInfoRequest = {time: moment().format('YYYY-MM-DD HH:MM:SS')};
           if(state.symGroupChecked.length == 0 && state.symChecked != '') {
-            userSymData.syms = [state.symChecked]
+            userSymData.symList = [state.symChecked]
           }else{
-            userSymData.syms = [...state.symGroupChecked]
+            userSymData.symList = [...state.symGroupChecked]
           }
           userSymData.mbtp = state.mbtp
           userSymData.nbtp = state.nbtp
